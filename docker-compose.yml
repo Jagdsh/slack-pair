@@ -1,0 +1,17 @@
+version: '3'
+services:
+  slack-pair:
+    environment:
+      - PAIRBOT_URL=http://0.0.0.0:5000
+      - SLACK_TOKEN=itubTSRWxYwWjE5CiQ8pNlTD
+      - MONGO_URL=mongodb://localhost:27017/test
+      - DB_PROVIDER=memory
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: slack-pair
+    container_name: slack-pair
+    ports:
+        - 5000:5000
+    restart: always
+
